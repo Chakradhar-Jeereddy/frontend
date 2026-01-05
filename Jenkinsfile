@@ -1,6 +1,6 @@
 @Library('jenkins-shared-library') _
 
-def configMap = [
+def mymap = [
     project : "roboshop",
     component: "frontend"
 ]
