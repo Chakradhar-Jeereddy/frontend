@@ -2,11 +2,12 @@
 
 def mymap = [
     project : "roboshop",
-    component: "frontend"
+    component: "frontend",
+    acc_id: '406682759639'
 ]
 
 if( ! env.BRANCH_NAME.equalsIgnoreCase('main') ){ // if not equals to main
-    nodeJSEKSPipeline(configMap) // by default it will call, call function inside this pipeline
+    nodeJSEKSPipeline(mymap) // by default it will call, call function inside this pipeline
 }
 else{
     echo "Please proceed with PROD process"
