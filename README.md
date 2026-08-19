@@ -71,7 +71,7 @@ helm upgrade --install aws-load-balancer-controller eks/aws-load-balancer-contro
 kubectl get pods -n kube-system
 ```
 
-Add target group binding (no ingress)
+Add target group binding (no ingress) in frontend deployment in manifest.yaml
 ==
 
 
