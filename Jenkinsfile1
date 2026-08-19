@@ -1,0 +1,18 @@
+@Library('shared-pipeline') _ 
+
+// /vars/nodeJSEKSPipeline
+def inputs = [
+     project: 'roboshop',
+     component: 'frontend',
+     acc_id: '406682759639'
+]
+
+// Trigger this pipeline if branch is not equal to main
+// search for condition as scripted pipeline
+// https://spacelift.io/blog/jenkins-environment-variables
+if( env.BRANCH_NAME.equalsIgnoreCase('main') ){
+      echo "Current brach is ${env.BRANCH_NAME}. Please fallow the CR process"
+}
+else{
+        pythonpipeline(inputs)
+}
