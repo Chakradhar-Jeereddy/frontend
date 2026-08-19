@@ -14,5 +14,5 @@ if( env.BRANCH_NAME.equalsIgnoreCase('main') ){
       echo "Current brach is ${env.BRANCH_NAME}. Please fallow the CR process"
 }
 else{
-        pythonpipeline(inputs)
+        nodejspipeline(inputs)
 }
