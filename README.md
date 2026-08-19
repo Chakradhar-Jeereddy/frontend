@@ -54,7 +54,7 @@ eksctl create iamserviceaccount \
 --cluster=roboshop-dev \
 --namespace=kube-system \
 --name=aws-load-balancer-controller \
---attach-policy-arn=arn:aws:iam::160885265516:policy/AWSLoadBalancerControllerIAMPolicy \
+--attach-policy-arn=<arn:aws:iam::160885265516:policy/AWSLoadBalancerControllerIAMPolicy> \  # Replace with actual policy
 --override-existing-serviceaccounts \
 --region us-east-1 \
 --approve
@@ -66,7 +66,9 @@ helm upgrade --install aws-load-balancer-controller eks/aws-load-balancer-contro
   --set clusterName=roboshop-dev \
   --set serviceAccount.create=false \
   --set serviceAccount.name=aws-load-balancer-controller \
-  --set vpcId=vpc-001cfbf13c0918f1a
+  --set vpcId=<vpc-001cfbf13c0918f1a> # EKS VPC
+
+kubectl get pods -n kube-system
 ```
 
 Add target group binding (no ingress)
